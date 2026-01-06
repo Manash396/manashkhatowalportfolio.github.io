@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manash | Android Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: #12182b;
+      --accent: #7c7cff;
+      --text: #e6e9ff;
+      --muted: #9aa4ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0b0f1a, #060812);
+      color: var(--text);
+    }
+    header {
+      padding: 64px 24px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+    header p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: auto;
+    }
+    .links a {
+      margin: 0 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    section {
+      max-width: 1100px;
+      margin: 48px auto;
+      padding: 0 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .card h3 { margin-top: 0; }
+    .tag {
+      display: inline-block;
+      background: rgba(124,124,255,0.15);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      margin-top: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Manash Khatowal</h1>
+  <p>Android Developer | Kotlin • Firebase • MVVM | Problem Solver</p>
+  <div class="links">
+    <a href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a>
+    <a href="https://twitter.com/YOUR_TWITTER" target="_blank">Twitter</a>
+  </div>
+</header>
+
+<section>
+  <h2>🚀 Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>MIRI App</h3>
+      <p>Production Android app on Play Store with real users. Worked on features, bug fixes, and Firebase integration.</p>
+      <span class="tag">Android</span>
+      <span class="tag">Kotlin</span>
+      <p><a href="https://github.com/YOUR_GITHUB/MIRI" target="_blank">View on GitHub →</a></p>
+    </div>
+    <div class="card">
+      <h3>Doctor Appointment App</h3>
+      <p>Slot-based appointment booking with dynamic availability and MVVM architecture.</p>
+      <span class="tag">MVVM</span>
+      <span class="tag">Firebase</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🧠 LeetCode</h2>
+  <div class="card">
+    <p>Solved algorithmic problems focusing on arrays, strings, recursion, and DSA fundamentals.</p>
+    <p><a href="https://leetcode.com/YOUR_LEETCODE" target="_blank">Visit LeetCode Profile →</a></p>
+  </div>
+</section>
+
+<section>
+  <h2>📜 Certifications</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Android Development Certification</h3>
+      <p>Hands-on training with Kotlin, REST APIs, and Firebase.</p>
+    </div>
+    <div class="card">
+      <h3>DSA Certification</h3>
+      <p>Problem-solving using Java and algorithmic thinking.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Manash Khatowal • Built for GitHub Pages
+</footer>
+
+</body>
+</html>
