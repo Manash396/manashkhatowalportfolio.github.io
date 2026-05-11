@@ -73,11 +73,14 @@
       border-radius: 12px;
       font-size: 0.8rem;
       margin-top: 8px;
+      width: auto;
+      padding: 10px;
     }
     .tag a {
   color: white;
   text-decoration: none;
   font-weight: 600;
+
 }
 
     footer {
@@ -93,9 +96,88 @@
       margin-top: -5px; 
       margin-bottom: 10px;
     }
+
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      align-items: flex-start;
+}
+
+     .cards-container:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+     }
+
+  .experience-container{
+    gap: 24px;
+  }
+
+  .crd{
+    margin-bottom: 30px;
+  }
+
+  
+
+.stars {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000 100%);
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* ⭐ static stars layer */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite alternate;
+}
+
+/* ✨ twinkle effect */
+@keyframes twinkle {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* 🌠 shooting star */
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(-45deg, white, transparent);
+  transform: rotate(45deg);
+  animation: shoot 1.5s linear forwards;
+  opacity: 0.8;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateY(0) translateX(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) translateX(-300px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
   </style>
 </head>
 <body>
+
+<div class="stars">
+  <span class="shooting"></span>
+  <span class="shooting"></span>
+  <span class="shooting"></span>
+  <span class="shooting"></span>
+</div>
 
 <header>
   <h1>Manash Khatowal</h1>
@@ -107,11 +189,24 @@
   </div>
 </header>
 
-<section>
+<section class="experience-container">
   <h2>💼 Experience</h2>
-  <div class="grid">
 
-    <div class="card">
+      <div class="cards-container crd">
+      <h3>Android Developer Intern @ Skycode IT Solution</h3>
+
+      <p class="duration"><strong>March 2026 – Presents</strong></p>
+
+      <p><strong>Dating App</strong> • Production Android Application</p>
+      <p>
+        Building a modern Android Application using Kotlin and Jetpack Compose, following scalable architecture principles. Integrated Firebase 
+services(Authentication, FireStore, Analytics) for user management and observing user’s behavior. 
+      </p>
+      
+      <span class="tag"><a href="https://github.com/Manash396/DatingApp" target="_blank">GitHub</a></span>
+    </div>
+
+    <div class="cards-container">
       <h3>Android Developer Interned @ Drishtee Foundation</h3>
 
       <p class="duration"><strong>July 2025 – October 2025</strong></p>
@@ -125,6 +220,7 @@ Developed features for the Vatika Profile module, resolved production bugs, and 
       
       <span class="tag"><a href="https://play.google.com/store/apps/details?id=com.drishtee.miri  " target="_blank">Play Store</a></span>
     </div>
+
   </section>
   
 <section>
@@ -270,11 +366,70 @@ Gained hands-on experience with DFS, BFS, Backtracking, Divide & Conquer, Greedy
 <footer>
   <h2>📬 Contact</h2>
   <p>Let’s connect! Feel free to reach out for opportunities or collaborations.</p>
-    <a href="mailto:manasash26@gmail.com">mailto:manasash26@gmail.com</a>
+    <a href="mailto:manasash26@gmail.com">manasash26@gmail.com</a>
     <br><br>
 
   © 2026 Manash Khatowal • Built for GitHub Pages
 </footer>
 
 </body>
+
+
+<script>
+const container = document.querySelector(".stars");
+
+/* ⭐ Create random stars */
+function createStars(count = 200) {
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+
+    const size = Math.random() * 2.5; // small to medium stars
+
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+
+    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * 100 + "%";
+
+    star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+    container.appendChild(star);
+  }
+}
+
+/* 🌠 Shooting stars generator */
+function createShootingStar() {
+  const star = document.createElement("div");
+  star.className = "shooting-star";
+
+  star.style.top = Math.random() * 50 + "%";
+  star.style.left = Math.random() * 100 + "%";
+
+  container.appendChild(star);
+
+  // remove after animation
+  setTimeout(() => {
+    star.remove();
+  }, 1500);
+}
+
+function spawnShootingStar() {
+  createShootingStar();
+
+  const delay = Math.random() * 3000 + 1000; // 1s to 4s
+
+  setTimeout(spawnShootingStar, delay);
+}
+
+spawnShootingStar();
+
+/* init */
+createStars(250);
+
+/* random shooting stars */
+setInterval(() => {
+  createShootingStar();
+}, 2000 + Math.random() * 3000);
+</script>
 </html>
