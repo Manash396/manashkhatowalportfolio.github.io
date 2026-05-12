@@ -54,7 +54,13 @@
       gap: 24px;
     }
     .card {
-      background: var(--card);
+      background: rgba(18, 24, 43, 0.25);
+
+       backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+
+        border: 1px solid rgba(124, 124, 255, 0.4);
+
       border-radius: 16px;
       padding: 24px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -101,7 +107,14 @@
     .cards-container {
       display: flex;
       flex-direction: column;
-      background: var(--card);
+
+      background: rgba(18, 24, 43, 0.25);
+
+       backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+
+        border: 1px solid rgba(124, 124, 255, 0.4);
+
       border-radius: 16px;
       padding: 24px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -132,7 +145,7 @@
   z-index: -1;
 }
 
-/* ⭐ static stars layer */
+/* static stars layer */
 .star {
   position: absolute;
   background: white;
@@ -141,13 +154,13 @@
   animation: twinkle 2s infinite alternate;
 }
 
-/* ✨ twinkle effect */
+/* twinkle effect */
 @keyframes twinkle {
   0% { opacity: 0.2; transform: scale(0.8); }
   100% { opacity: 1; transform: scale(1.2); }
 }
 
-/* 🌠 shooting star */
+/* shooting star */
 .shooting-star {
   position: absolute;
   width: 2px;
