@@ -148,16 +148,17 @@
 /* static stars layer */
 .star {
   position: absolute;
+  height:10px;
   background: white;
   border-radius: 50%;
   opacity: 0.8;
-  animation: twinkle 2s infinite alternate;
+  animation: twinkle 0.5s infinite alternate;
 }
 
 /* twinkle effect */
 @keyframes twinkle {
-  0% { opacity: 0.2; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1.2); }
+  0% { opacity: 0.2; transform: scale(3); }
+  100% { opacity: 1; transform: scale(1.5); }
 }
 
 /* shooting star */
@@ -276,31 +277,6 @@ Developed features for the Vatika Profile module, resolved production bugs, and 
       <p><a href="https://github.com/Manash396/VisitFence" target="_blank">View on GitHub →</a></p>
       <p><a href="https://www.linkedin.com/posts/manash-khatowal-130bb4249_built-visitfence-android-geofencing-activity-7424487833840775168-ucA-" target="_blank">View on LinkedIn →</a></p>
     </div>
-
-    <div class="card">
-      <h3>MusicApp</h3>
-      <p>A simple Android Music Player built using Kotlin, Retrofit, MediaPlayer, and Jetpack Fragments.</p>
-      <span class="tag">Android</span>
-      <span class="tag">Kotlin</span>
-      <span class="tag">Retrofit2</span>
-      <span class="tag">Picasso</span>
-      <span class="tag">Gson</span>
-      <p><a href="https://github.com/Manash396/MusicApp" target="_blank">View on GitHub →</a></p>
-      <p><a href="https://www.linkedin.com/posts/manash-khatowal-130bb4249_androiddevelopment-kotlin-opensource-activity-7341875439897911297-aY96?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2UarQBD2l7XKILTuFmo2kChxJ-oANXLtM" target="_blank">View on LinkedIn →</a></p>
-    </div>
-
-    <div class="card">
-      <h3>News26 - Android News App</h3>
-      <p>News26 is a sleek and modern Android news application built using Kotlin, Jetpack libraries (Compose/Fragments), and Firebase.</p>
-      <span class="tag">Android</span>
-      <span class="tag">Kotlin</span>
-      <span class="tag">Firebase</span>
-      <span class="tag">REST API</span>
-      <span class="tag">Room</span>
-      <p><a href="https://github.com/Manash396/News26" target="_blank">View on GitHub →</a></p>
-      <p><a href="https://www.linkedin.com/posts/manash-khatowal-130bb4249_androiddev-kotlin-firebase-activity-7344983876408070146-2Lsa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2UarQBD2l7XKILTuFmo2kChxJ-oANXLtM" target="_blank">View on LinkedIn →</a></p>
-    </div>
-
   
     
   </div>
@@ -406,9 +382,9 @@ function createStars(count = 200) {
     star.style.top = Math.random() * 100 + "%";
     star.style.left = Math.random() * 100 + "%";
 
-    star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    star.style.animationDuration =  (Math.random() * 5)+"s";
 
-    container.appendChild(star);
+    container.appendChild(star);  
   }
 }
 
